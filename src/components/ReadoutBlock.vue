@@ -1,38 +1,47 @@
 <template>
     <div class="readout">
-        <div class="item" v-for="item in magicItems" :key="item.id">
-        <header class="row box nullBottomBorder">
-            <h1>{{ item.itemName }}</h1>
-        </header>
-        
-        <section class="gridRow-3fr row" >
-            <section class="box nullRightBorder nullBottomBorder">
-                <h2>Magical/Mundane:</h2>
-                <h1>{{  item.magicOrMundane  }}</h1>
+
+        <button @click="getItem"> GET NEW ITEM</button>
+
+        <!-- : = v-bind -->
+        <!-- v-for: iterates through each item in magicItems array -->
+        <!-- renders div 'item' for each element/object in magicItem array -->
+        <div class="item" v-for="item in currentItem" :key="item.id">
+            
+            <header class="row box nullBottomBorder">
+                <!-- '{{ anything in these is template syntax }} -->
+                <h1>{{ item.itemName }}</h1>
+            </header>
+            
+            <!-- having space in classes applies both classes -->
+            <section class="gridRow-3fr row" >
+                <section class="box nullRightBorder nullBottomBorder">
+                    <h2>Magical/Mundane:</h2>
+                    <h1>{{  item.magicOrMundane  }}</h1>
+                </section>
+
+                <section class="box nullRightBorder nullBottomBorder">
+                    <h2>Value:</h2> 
+                    <h1>{{ item.itemValue }}</h1>
+                </section>
+
+                <section class="box nullBottomBorder">
+                    <h2>Type:</h2>
+                    <h1>{{  item.itemType  }}</h1>
+                </section>
             </section>
 
-            <section class="box nullRightBorder nullBottomBorder">
-                <h2>Value:</h2> 
-                <h1>{{ item.itemValue }}</h1>
-            </section>
+            <section class="gridRow-1fr-2fr row"> 
+                <section class="box nullRightBorder">
+                    <h2>Enchantment(s):</h2>
+                    <h1>{{  item.enchantment  }}</h1>
+                </section>
 
-            <section class="box nullBottomBorder">
-                <h2>Type:</h2>
-                <h1>{{  item.itemType  }}</h1>
+                <section class="box">
+                    <h2>Description:</h2>
+                    <h1>{{ item.itemDescription }} </h1>
+                </section>
             </section>
-        </section>
-
-        <section class="gridRow-1fr-2fr row"> 
-            <section class="box nullRightBorder">
-                <h2>Enchantment(s):</h2>
-                <h1>{{  item.enchantment  }}</h1>
-            </section>
-
-             <section class="box">
-                <h2>Description:</h2>
-                <h1>{{ item.itemDescription }} </h1>
-            </section>
-        </section>
        </div>
     </div>
 </template>
@@ -42,6 +51,8 @@ export default {
     data() {
         return {
             name:'ReadoutBlock',
+            oldItemNumber: 0,
+            // hard coded magicItem array filled with item objects to be displayed
             magicItems: [
             {
                 id: 0,
@@ -91,6 +102,21 @@ export default {
         ]
         }
     },
+    methods: {
+        getItem(){
+            const randomNumber = Math.floor(Math.random() * (4 - 0) + 0);
+            while (this.oldItemNumber == randomNumber){
+                this.getItem();
+            }
+            this.oldItemNumber = randomNumber
+        }
+    },
+    computed: {
+        // currentItem: function () {
+        //    console.log(this.magicItem[this.oldItemNumber]) 
+        //    return this.magicItems[this.oldItemNumber]
+        // }
+    }
 }
 </script>
 
