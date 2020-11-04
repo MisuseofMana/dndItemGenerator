@@ -6,30 +6,25 @@
         
         <div class="columnFlex">
             <label for="Magical">Magical</label>
-            <input type="radio" id="Magical" value="Magical" v-model="magicOrMundane">
+            <input type="checkbox" id="Magical" value="Magical">
         
             <label for="Mundane">Mundane</label>
-            <input type="radio" id="Mundane" value="Mundane" v-model="magicOrMundane">
+            <input type="checkbox" id="Mundane" value="Mundane">
         </div>
 
         <div class="columnFlex">
-            <input type="radio" id="Weapons" value="Wapons" v-model="itemType">
+            <input type="checkbox" id="Weapons" value="Wapons">
             <label for="Weapons">Wapons</label>
 
-            <input type="radio" id="Armors" value="Armoors" v-model="itemType">
+            <input type="checkbox" id="Armors" value="Armoors">
             <label for="Armors">Armoors</label>
 
-            <input type="radio" id="Items" value="I-Tim's" v-model="itemType">
+            <input type="checkbox" id="Items" value="I-Tim's">
             <label for="Items">I-Tims</label>
 
-            <input type="radio" id="Trinkets" value="Trankets" v-model="itemType">
+            <input type="checkbox" id="Trinkets" value="Trankets">
             <label for="Trinkets">Trankets</label>
         </div>
-
-        <div id="Generation"> 
-            <button>Loot Me, Daddy</button>
-        </div>
-        
     </div>
 </template>
 
@@ -39,7 +34,7 @@
     export default {
         name: 'ItemGenerator',
         methods: {
-
+            
         },
     }
 </script>
