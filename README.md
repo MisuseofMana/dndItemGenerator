@@ -4,10 +4,15 @@
 - Item Generator UI (Non-Functional)
 - Template Data
 
-
-## TODO
-- [ ] Make UI NOICER
-- [ ] Integrate Firebase Backend
+## Near Future
 - [ ] Come up with 25 items for database
     - [ ] Come up with 25 more
+- [ ] Make filters work with fake backend
+
+
+## Eventually
+- [ ] Make UI NOICER
+- [ ] Integrate Firebase Backend
+
+## Bonus Stuff
 - [ ] Add in Character Generator
