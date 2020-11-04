@@ -8,7 +8,7 @@
             <!-- declares two buttons -->
             <!-- v-on:click = when clicked, emit change page event and payload to parent (app.vue) -->
             <button @click="$emit('change-page', 'item')">Item Generator</button>
-            <button @click="$emit('change-page', 'char')">Character Generator</button>
+            <!-- <button @click="$emit('change-page', 'char')">Character Generator</button> -->
         </section>
         <img src="@/assets/imgs/banner.png" alt="">
     </header>
