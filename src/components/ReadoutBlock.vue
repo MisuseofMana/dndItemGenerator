@@ -1,7 +1,7 @@
 <template>
     <div class="readout">
 
-        <button @click="getItem"> GET NEW ITEM</button>
+        <button @click="getItem">GET NEW ITEM</button>
 
         <!-- : = v-bind -->
         <!-- v-for: iterates through each item in magicItems array -->
@@ -99,24 +99,25 @@ export default {
                 itemType: 'Friend',
                 enchantment: '+2d6 on failed roll'
             }
-        ]
+        ],
+        currentItem: [],
         }
     },
     methods: {
         getItem(){
-            const randomNumber = Math.floor(Math.random() * (4 - 0) + 0);
-            while (this.oldItemNumber == randomNumber){
+            const randomNumber = Math.floor(Math.random() * (this.magicItems.length) + 0);
+            console.log(randomNumber)
+            if (this.oldItemNumber == randomNumber){
                 this.getItem();
             }
-            this.oldItemNumber = randomNumber
+            else {
+                this.oldItemNumber = randomNumber;
+                let item = this.magicItems[randomNumber];
+                this.currentItem = [];
+                this.currentItem.push(item)
+            }
         }
     },
-    computed: {
-        // currentItem: function () {
-        //    console.log(this.magicItem[this.oldItemNumber]) 
-        //    return this.magicItems[this.oldItemNumber]
-        // }
-    }
 }
 </script>
 
