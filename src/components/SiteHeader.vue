@@ -1,7 +1,6 @@
 <template>
     <!-- header layout -->
     <header>
-
         <h1>Shib and Daveys Gerblin Treasuer</h1>
         
         <section class="buttonContainer">
@@ -10,7 +9,9 @@
             <button @click="$emit('change-page', 'item')">Item Generator</button>
             <!-- <button @click="$emit('change-page', 'char')">Character Generator</button> -->
         </section>
+
         <img src="@/assets/imgs/banner.png" alt="">
+
     </header>
 </template>
 
@@ -22,6 +23,18 @@
 
 <style scoped>
 /* scoped is VueJS for "private" */
+header {
+    background:darkslateblue;
+    height:100px;
+    width:100vw;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+header img {
+    height: 100px;
+}
 
 h1 {
     /* padding = top right bottom left: shorthand for writing each out */
@@ -43,15 +56,5 @@ h1 {
     align-items:center;
 }
 
-header {
-    background:darkslateblue;
-    height:100px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
 
-header img {
-    height: 100px;
-}
 </style>
